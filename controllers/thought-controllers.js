@@ -1,143 +1,144 @@
-const { Thought, User } = require("../models");
+const { Quote, Book } = require("../models");
 
-const thoughtController = {
-  // gets all thoughts
+const quoteController = {
+  // gets all quotes
   // Tested successfully in Insomnia 2/26/2023 12:04 PM
-  async getAllThoughts(req, res) {
+  async getAllQuotes(req, res) {
     try {
-      const thoughtData = await Thought.find().sort({ createdAt: -1 });
+      const quoteData = await Quote.find().sort({ createdAt: -1 });
 
-      res.json(thoughtData);
+      res.json(quoteData);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   },
-  // gets single thought by id
+  
+  // gets single quote by id
   // Tested successfully in Insomnia 2/26/2023 12:04 PM
-  async getSingleThought(req, res) {
+  async getSingleQuote(req, res) {
     try {
-      const thoughtData = await Thought.findOne({
-        _id: req.params.thoughtId,
+      const quoteData = await Quote.findOne({
+        _id: req.params.quoteId,
       });
 
-      if (!thoughtData) {
-        return res.status(404).json({ message: "No thought with this id!" });
+      if (!quoteData) {
+        return res.status(404).json({ message: "No quote with this id!" });
       }
 
-      res.json(thoughtData);
+      res.json(quoteData);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   },
-  // creates a thought
+  // creates a quote
   // Tested successfully in Insomnia 2/26/2023 12:07 PM
-  async createThought(req, res) {
+  async createQuote(req, res) {
     try {
-      const thoughtData = await Thought.create(req.body);
+      const quoteData = await Quote.create(req.body);
 
-      const dbUserData = await User.findOneAndUpdate(
-        { _id: req.body.userId },
-        { $push: { thoughts: thoughtData._id } },
+      const dbBookData = await Book.findOneAndUpdate(
+        { _id: req.body.bookId },
+        { $push: { quotes: quoteData._id } },
         { new: true }
       );
 
-      if (!dbUserData) {
+      if (!dbBookData) {
         return res
           .status(404)
-          .json({ message: "Thought created but no user with this id!" });
+          .json({ message: "Quote created but no book with this id!" });
       }
 
-      res.json({ message: "Thought successfully created!" });
+      res.json({ message: "Quote successfully created!" });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   },
-  // updates thought by ID
+  // updates quote by ID
   // Tested successfully in Insomnia 2/26/2023 12:10 PM
-  async updateThought(req, res, err) {
-    const thoughtData = await Thought.findOneAndUpdate(
-      { _id: req.params.thoughtId },
+  async updateQuote(req, res, err) {
+    const quoteData = await Quote.findOneAndUpdate(
+      { _id: req.params.quoteId },
       { $set: req.body },
       { runValidators: true, new: true }
     );
 
-    if (!thoughtData) {
-      return res.status(404).json({ message: "No thought with this id!" });
+    if (!quoteData) {
+      return res.status(404).json({ message: "No quote with this id!" });
     }
 
-    res.json(thoughtData);
+    res.json(quoteData);
 
     console.log(err);
     res.status(500).json(err);
   },
-  // deletes thought by ID
+  // deletes quote by ID
   // Tested successfully in Insomnia 2/26/2023 12:08 PM
-  async deleteThought(req, res) {
+  async deleteQuote(req, res) {
     try {
-      const dbThoughtData = await Thought.findOneAndRemove({
-        _id: req.params.thoughtId,
+      const dbQuoteData = await Quote.findOneAndRemove({
+        _id: req.params.quoteId,
       });
 
-      if (!dbThoughtData) {
-        return res.status(404).json({ message: "No thought with this id!" });
+      if (!dbQuoteData) {
+        return res.status(404).json({ message: "No quote with this id!" });
       }
 
-      const dbUserData = User.findOneAndUpdate(
-        { thoughts: req.params.thoughtId },
-        { $pull: { thoughts: req.params.thoughtId } },
+      const dbBookData = Book.findOneAndUpdate(
+        { quotes: req.params.quoteId },
+        { $pull: { quotes: req.params.quoteId } },
         { new: true }
       );
 
-      if (!dbUserData) {
+      if (!dbBookData) {
         return res
           .status(404)
-          .json({ message: "Thought created but no user with this id!" });
+          .json({ message: "Quote created but no book with this id!" });
       }
 
-      res.json({ message: "Thought successfully deleted!" });
+      res.json({ message: "Quote successfully deleted!" });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   },
-  // adds reaction to thought
+  // adds reaction to Quote
   // Tested successfully in Insomnia 2/26/2023 12:15 PM
   async addReaction(req, res) {
     try {
-      const dbThoughtData = await Thought.findOneAndUpdate(
-        { _id: req.params.thoughtId },
+      const dbQuoteData = await Quote.findOneAndUpdate(
+        { _id: req.params.quoteId },
         { $addToSet: { reactions: req.body } },
         { runValidators: true, new: true }
       );
 
-      if (!dbThoughtData) {
-        return res.status(404).json({ message: "No thought with this id!" });
+      if (!dbQuoteData) {
+        return res.status(404).json({ message: "No quote with this id!" });
       }
 
-      res.json(dbThoughtData);
+      res.json(dbQuoteData);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   },
-  // removes reaction from thought
+  // removes reaction from quote
   // Tested successfully in Insomnia 2/26/2023 12:16 PM
   async removeReaction(req, res) {
     try {
-      const dbThoughtData = await Thought.findOneAndUpdate(
-        { _id: req.params.thoughtId },
-        { $pull: { reactions: { reactionId: req.params.reactionId } } },
+      const dbQuoteData = await Quote.findOneAndUpdate(
+        { _id: req.params.quoteId },
+        { $pull: { reactions: { reactionId: req.params.reactionId }}},
         { runValidators: true, new: true }
       );
 
-      if (!dbThoughtData) {
-        return res.status(404).json({ message: "No thought with this id!" });
+      if (!dbQuoteData) {
+        return res.status(404).json({ message: "No quote with this id!" });
       }
 
-      res.json(dbThoughtData);
+      res.json(dbQuoteData);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -145,4 +146,4 @@ const thoughtController = {
   },
 };
 
-module.exports = thoughtController;
+module.exports = quoteController;
