@@ -1,49 +1,49 @@
 const seedThoughts = [
   {
-    thoughtText: "This is a sample thought about something interesting.",
-    username: "Yennefer",
+    thoughtText: "“When our emotions are engaged, we often have trouble seeing things as they are.” ― Robert Greene, The Art of Seduction",
+    username: "booklover99",
     reactions: [
       {
         reactionBody: "👍",
-        username: "Triss",
+        username: "dungsANDdrags",
       },
       {
         reactionBody: "😄",
-        username: "Ciri",
+        username: "bookworm22",
       },
     ],
   },
   {
     thoughtText: "This is a sample thought about something else interesting.",
-    username: "Triss",
+    username: "dungsANDdrags",
     reactions: [
       {
         reactionBody: "👍",
-        username: "Yennefer",
+        username: "bookworm22",
       },
       {
         reactionBody: "😄",
-        username: "Ciri",
+        username: "booklover99",
       },
     ],
   },
   {
     thoughtText: "This is a sample thought about something else interesting.",
-    username: "Ciri",
+    username: "bookworm22",
     reactions: [
       {
         reactionBody: "👍",
-        username: "Yennefer",
+        username: "booklover99",
       },
       {
         reactionBody: "😄",
-        username: "Triss",
+        username: "dungsANDdrags",
       },
     ],
   },
   {
     thoughtText: "This is a sample thought about something else interesting.",
-    username: "Geralt",
+    username: "jonsnowsdoppleganger",
     reactions: [
       {
         reactionBody: "👍",
