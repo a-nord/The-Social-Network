@@ -114,6 +114,8 @@ npm run start
 
 ## Usage
 
+<a href="https://www.loom.com/share/eaaf81c6b92c442b825b406e75483ce2?sid=235d8f72-ae27-4194-b3b7-854c3560b030"><strong>CLICK TO WATCH THE DEMO VIDEO</strong></a>
+
 ### Available Routes
 
 #### User Routes
