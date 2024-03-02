@@ -2,7 +2,6 @@ const { Thought, User } = require("../models");
 
 const thoughtController = {
   // gets all thoughts
-  // Tested successfully in Insomnia 2/26/2023 12:04 PM
   async getAllThoughts(req, res) {
     try {
       const thoughtData = await Thought.find().sort({ createdAt: -1 });
@@ -14,7 +13,6 @@ const thoughtController = {
     }
   },
   // gets single thought by id
-  // Tested successfully in Insomnia 2/26/2023 12:04 PM
   async getSingleThought(req, res) {
     try {
       const thoughtData = await Thought.findOne({
@@ -32,7 +30,6 @@ const thoughtController = {
     }
   },
   // creates a thought
-  // Tested successfully in Insomnia 2/26/2023 12:07 PM
   async createThought(req, res) {
     try {
       const thoughtData = await Thought.create(req.body);
@@ -56,7 +53,6 @@ const thoughtController = {
     }
   },
   // updates thought by ID
-  // Tested successfully in Insomnia 2/26/2023 12:10 PM
   async updateThought(req, res, err) {
     const thoughtData = await Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -74,7 +70,6 @@ const thoughtController = {
     res.status(500).json(err);
   },
   // deletes thought by ID
-  // Tested successfully in Insomnia 2/26/2023 12:08 PM
   async deleteThought(req, res) {
     try {
       const dbThoughtData = await Thought.findOneAndRemove({
@@ -104,7 +99,6 @@ const thoughtController = {
     }
   },
   // adds reaction to thought
-  // Tested successfully in Insomnia 2/26/2023 12:15 PM
   async addReaction(req, res) {
     try {
       const dbThoughtData = await Thought.findOneAndUpdate(
@@ -124,7 +118,6 @@ const thoughtController = {
     }
   },
   // removes reaction from thought
-  // Tested successfully in Insomnia 2/26/2023 12:16 PM
   async removeReaction(req, res) {
     try {
       const dbThoughtData = await Thought.findOneAndUpdate(
