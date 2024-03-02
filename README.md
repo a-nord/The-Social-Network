@@ -3,12 +3,9 @@
   <!-- Add badges using the following format: -->
   <!-- ![Name](urlToShieldHere)(urlToGithubHere) -->
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributors](https://img.shields.io/github/contributors/404pandas/social-network-api.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/social-network-api/graphs/contributors)
-[![Forks](https://img.shields.io/github/forks/404pandas/social-network-api.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/social-network-api/network/members)
-[![Stargazers](https://img.shields.io/github/stars/404pandas/social-network-api.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/social-network-api/stargazers)
-[![Issues](https://img.shields.io/github/issues/404pandas/social-network-api.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/social-network-api/issues)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=plastic&logo=appveyor&logo=linkedin&colorB=555)](https://linkedin.com/in/404pandas)
+[![License: MIT](https://img.shields.io/badge/License-MIT-pink.svg)](https://opensource.org/licenses/MIT)
+[![Issues](https://img.shields.io/github/issues/a-nord/the-social-network.svg?style=plastic&logo=appveyor)](https://github.com/a-nord/the-social-network/issues)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=plastic&logo=appveyor&logo=linkedin&colorB=555)](https://linkedin.com/in/ashleynord)
 
 </div>
 
@@ -16,17 +13,17 @@
 
 <div align="center">
 
-  <h3 align="center">Social Network API</h3>
+  <h3 align="center">The Social Network</h3>
 
   <p align="center">
-    <a href="https://github.com/404pandas/social-network-api"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/a-nord/the-social-network"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="#usage">View Demo Video</a>
     ·
-    <a href="https://github.com/404pandas/social-network-api/issues">Report Bug</a>
+    <a href="https://github.com/a-nord/the-social-network/issues">Report Bug</a>
     ·
-    <a href="https://github.com/404pandas/social-network-api/issues">Request Feature</a>
+    <a href="https://github.com/a-nord/the-social-network/issues">Request Feature</a>
 
   </p>
 </div>
@@ -49,7 +46,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -63,7 +59,7 @@
 <!-- Add screenshots using the following format: -->
 <!-- ![Screenshot alt description](directPathOfScreenshots) -->
 
-This project was built with MongoDB
+This project was built with MongoDB and is a social network api that has users inputting their thoughts.
 
 ### Built With
 
@@ -89,7 +85,7 @@ Once completely built, this application will function as a social media backend 
 1. Clone the rep
 
 ```
-git clone https://github.com/404pandas/social-network-api.git
+git clone https://github.com/a-nord/the-social-network.git
 ```
 
 2. Install dependencies
@@ -117,8 +113,6 @@ npm run start
 <!-- USAGE EXAMPLES -->
 
 ## Usage
-
-https://github.com/404pandas/social-network-api/assets/113853550/7d7e0153-6da9-4835-a01e-0d2bacb1bcf6
 
 ### Available Routes
 
@@ -159,22 +153,7 @@ https://github.com/404pandas/social-network-api/assets/113853550/7d7e0153-6da9-4
 
 - [ ] Add front end
 
-See the [open issues](https://github.com/404pandas/social-network-api/issues) for a full list of proposed features (and known issues).
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
-3. Commit your Changes (git commit -m 'Add some AmazingFeature')
-4. Push to the Branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
+See the [open issues](https://github.com/a-nord/the-social-network/issues) for a full list of proposed features (and known issues).
 
 <!-- LICENSE -->
 
@@ -188,14 +167,14 @@ See LICENSE.txt for more information.
 
 ## Contact
 
-[Mary Elenius](https://maryelenius.com/) - mary.panda.jackson@gmail.com
+[Ashley Nord](https://github.com/a-nord/) - anord99@yahoo.com
 
 Project Link:
 
-[Github Repository](https://github.com/404pandas/social-network-api)
+[Github Repository](https://github.com/a-nord/the-social-network)
 
 <!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments
 
-I would like to give a big shoutout to my partner in crime and daughter, Yennefer! Every day she proves she is small yet mighty!
+I would like to give a big shoutout to our TA, Mary E.  Without her I'd be lost in the middle of the ocean!
